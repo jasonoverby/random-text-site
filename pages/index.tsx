@@ -21,7 +21,7 @@ const getRandomPhrases = async (randomWords: string[]) => {
   return phrases;
 };
 const getRandomPhrasesDebounced = AwesomeDebouncePromise(getRandomPhrases, 500);
-const getPhrase = (phrases: string[], phrase: string) => {
+const getStockPhrase = (phrases: string[], phrase: string) => {
   const randomIndex = getRandomNumber(0, STOCK_PHRASES.length - 1);
   return STOCK_PHRASES[randomIndex];
 };
@@ -32,10 +32,10 @@ const RandomText = ({ randomWords }: { randomWords: string[] }) => {
 
   const handleClick = () => {
     console.log('phrases', phrases);
-    const newPhrase = getPhrase(phrases, phrase);
+    const stockPhrase = getStockPhrase(phrases, phrase);
     if (phrase === phrases[0]) {
-      const newPhrases = [newPhrase, ...phrases.slice(1)];
-      setPhrase(newPhrase);
+      const newPhrases = [stockPhrase, ...phrases.slice(1)];
+      setPhrase(stockPhrase);
       setPhrases(newPhrases);
     } else {
       setPhrase(phrases[0]);
