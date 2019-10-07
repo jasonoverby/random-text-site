@@ -4391,37 +4391,43 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
-/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-jsx/style */ "./node_modules/styled-jsx/style.js");
-/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var awesome_debounce_promise__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! awesome-debounce-promise */ "./node_modules/awesome-debounce-promise/dist/index.es.js");
-/* harmony import */ var _random_text_src_get_random_text__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../random-text/src/get-random-text */ "./random-text/src/get-random-text.ts");
-/* harmony import */ var _random_text_src_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../random-text/src/utils */ "./random-text/src/utils.ts");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-jsx/style */ "./node_modules/styled-jsx/style.js");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var awesome_debounce_promise__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! awesome-debounce-promise */ "./node_modules/awesome-debounce-promise/dist/index.es.js");
+/* harmony import */ var _random_text_src_get_random_text__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../random-text/src/get-random-text */ "./random-text/src/get-random-text.ts");
+/* harmony import */ var _random_text_src_utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../random-text/src/utils */ "./random-text/src/utils.ts");
+/* harmony import */ var _random_text_text_strings_json__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../random-text/text/strings.json */ "./random-text/text/strings.json");
+var _random_text_text_strings_json__WEBPACK_IMPORTED_MODULE_8___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../random-text/text/strings.json */ "./random-text/text/strings.json", 1);
+
 
 
 var _jsxFileName = "/Users/jasonoverby/p/random-text-site/pages/index.tsx";
 
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement;
+
 
 
 
 
 var NUMBER_OF_PHRASES = 3;
 var STARTER_PHRASE = 'get random text';
+var STOCK_PHRASES = _random_text_text_strings_json__WEBPACK_IMPORTED_MODULE_8__["phrases"];
 
 var getRandomPhrases =
 /*#__PURE__*/
 function () {
-  var _ref = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  var _ref = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(
   /*#__PURE__*/
-  _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(randomWords) {
+  _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee(randomWords) {
     var phrases, i, phrase;
-    return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+    return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
@@ -4436,7 +4442,7 @@ function () {
 
             _context.prev = 3;
             _context.next = 6;
-            return Object(_random_text_src_get_random_text__WEBPACK_IMPORTED_MODULE_5__["default"])(randomWords);
+            return Object(_random_text_src_get_random_text__WEBPACK_IMPORTED_MODULE_6__["default"])(randomWords);
 
           case 6:
             phrase = _context.sent;
@@ -4470,29 +4476,37 @@ function () {
   };
 }();
 
-var getRandomPhrasesDebounced = Object(awesome_debounce_promise__WEBPACK_IMPORTED_MODULE_4__["default"])(getRandomPhrases, 500);
+var getRandomPhrasesDebounced = Object(awesome_debounce_promise__WEBPACK_IMPORTED_MODULE_5__["default"])(getRandomPhrases, 500);
+
+var getPhrase = function getPhrase(phrases, phrase) {
+  var randomIndex = Object(_random_text_src_utils__WEBPACK_IMPORTED_MODULE_7__["getRandomNumber"])(0, STOCK_PHRASES.length - 1);
+  return STOCK_PHRASES[randomIndex];
+};
 
 var RandomText = function RandomText(_ref2) {
   var randomWords = _ref2.randomWords;
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])([STARTER_PHRASE]),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])([STARTER_PHRASE]),
       phrases = _useState[0],
       setPhrases = _useState[1];
 
-  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(STARTER_PHRASE),
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(STARTER_PHRASE),
       phrase = _useState2[0],
-      setPhrase = _useState2[1]; // useEffect(() => {
-  //   if (!phrases || phrases.length === 0) {
-  //     getRandomPhrases(randomWords).then((newPhrases) => {
-  //       setPhrases(phrases);
-  //     });
-  //   }
-  // });
-
+      setPhrase = _useState2[1];
 
   var handleClick = function handleClick() {
     console.log('phrases', phrases);
-    setPhrase(phrases[0]);
+    var newPhrase = getPhrase(phrases, phrase);
+
+    if (phrase === phrases[0]) {
+      var _newPhrases = [newPhrase].concat(Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(phrases.slice(1)));
+
+      setPhrase(newPhrase);
+      setPhrases(_newPhrases);
+    } else {
+      setPhrase(phrases[0]);
+    }
+
     var newPhrases = phrases && phrases.slice(1) || [];
 
     if (newPhrases.length <= 1) {
@@ -4509,7 +4523,7 @@ var RandomText = function RandomText(_ref2) {
     className: "jsx-1924471468" + " " + "container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 55
     },
     __self: this
   }, __jsx("h1", {
@@ -4517,28 +4531,28 @@ var RandomText = function RandomText(_ref2) {
     className: "jsx-1924471468",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 56
     },
     __self: this
-  }, phrase), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  }, phrase), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_3___default.a, {
     id: "1924471468",
     __self: this
-  }, "@import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap');body{background:#000;}.container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;height:100vh;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}h1{color:rgb(255,235,238);cursor:pointer;font:32px 'fira code',menlo,helvetica,arial,sans-serif;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9qYXNvbm92ZXJieS9wL3JhbmRvbS10ZXh0LXNpdGUvcGFnZXMvaW5kZXgudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQW1EUyxBQUV3RixBQUUzRCxBQUlILEFBT1ksZ0JBVjNCLE9BV2lCLGVBQzRDLG9DQVI5QyxhQUNVLE1BUXpCLDZGQVBxQiw2RkFDckIiLCJmaWxlIjoiL1VzZXJzL2phc29ub3ZlcmJ5L3AvcmFuZG9tLXRleHQtc2l0ZS9wYWdlcy9pbmRleC50c3giLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyB1c2VTdGF0ZSwgdXNlRWZmZWN0IH0gZnJvbSAncmVhY3QnO1xuaW1wb3J0IEF3ZXNvbWVEZWJvdW5jZVByb21pc2UgZnJvbSAnYXdlc29tZS1kZWJvdW5jZS1wcm9taXNlJztcbmltcG9ydCBnZXRSYW5kb21QaHJhc2UgZnJvbSAnLi4vcmFuZG9tLXRleHQvc3JjL2dldC1yYW5kb20tdGV4dCc7XG5pbXBvcnQgeyBnZXRSYW5kb21Xb3JkcyB9IGZyb20gJy4uL3JhbmRvbS10ZXh0L3NyYy91dGlscyc7XG5cbmNvbnN0IE5VTUJFUl9PRl9QSFJBU0VTID0gMztcbmNvbnN0IFNUQVJURVJfUEhSQVNFID0gJ2dldCByYW5kb20gdGV4dCc7XG5cbmNvbnN0IGdldFJhbmRvbVBocmFzZXMgPSBhc3luYyAocmFuZG9tV29yZHM6IHN0cmluZ1tdKSA9PiB7XG4gIGNvbnN0IHBocmFzZXMgPSBbXTtcbiAgZm9yIChsZXQgaSA9IDA7IGkgPCBOVU1CRVJfT0ZfUEhSQVNFUzsgaSArPSAxKSB7XG4gICAgdHJ5IHtcbiAgICAgIGNvbnN0IHBocmFzZSA9IGF3YWl0IGdldFJhbmRvbVBocmFzZShyYW5kb21Xb3Jkcyk7XG4gICAgICBwaHJhc2VzLnB1c2gocGhyYXNlKTtcbiAgICB9IGNhdGNoIChlcnIpIHtcbiAgICAgIGNvbnNvbGUubG9nKGVycik7XG4gICAgfVxuICB9XG4gIHJldHVybiBwaHJhc2VzO1xufTtcbmNvbnN0IGdldFJhbmRvbVBocmFzZXNEZWJvdW5jZWQgPSBBd2Vzb21lRGVib3VuY2VQcm9taXNlKGdldFJhbmRvbVBocmFzZXMsIDUwMCk7XG5cbmNvbnN0IFJhbmRvbVRleHQgPSAoeyByYW5kb21Xb3JkcyB9OiB7IHJhbmRvbVdvcmRzOiBzdHJpbmdbXSB9KSA9PiB7XG4gIGNvbnN0IFtwaHJhc2VzLCBzZXRQaHJhc2VzXSA9IHVzZVN0YXRlKFtTVEFSVEVSX1BIUkFTRV0pO1xuICBjb25zdCBbcGhyYXNlLCBzZXRQaHJhc2VdID0gdXNlU3RhdGUoU1RBUlRFUl9QSFJBU0UpO1xuICAvLyB1c2VFZmZlY3QoKCkgPT4ge1xuICAvLyAgIGlmICghcGhyYXNlcyB8fCBwaHJhc2VzLmxlbmd0aCA9PT0gMCkge1xuICAvLyAgICAgZ2V0UmFuZG9tUGhyYXNlcyhyYW5kb21Xb3JkcykudGhlbigobmV3UGhyYXNlcykgPT4ge1xuICAvLyAgICAgICBzZXRQaHJhc2VzKHBocmFzZXMpO1xuICAvLyAgICAgfSk7XG4gIC8vICAgfVxuICAvLyB9KTtcblxuICBjb25zdCBoYW5kbGVDbGljayA9ICgpID0+IHtcbiAgICBjb25zb2xlLmxvZygncGhyYXNlcycsIHBocmFzZXMpO1xuICAgIHNldFBocmFzZShwaHJhc2VzWzBdKTtcbiAgICBsZXQgbmV3UGhyYXNlcyA9IChwaHJhc2VzICYmIHBocmFzZXMuc2xpY2UoMSkpIHx8IFtdO1xuICAgIGlmIChuZXdQaHJhc2VzLmxlbmd0aCA8PSAxKSB7XG4gICAgICBnZXRSYW5kb21QaHJhc2VzRGVib3VuY2VkKHJhbmRvbVdvcmRzKS50aGVuKChyYW5kb21QaHJhc2VzKSA9PiB7XG4gICAgICAgIHNldFBocmFzZXMobmV3UGhyYXNlcy5jb25jYXQocmFuZG9tUGhyYXNlcykpO1xuICAgICAgfSk7XG4gICAgfSBlbHNlIHtcbiAgICAgIG5ld1BocmFzZXMgPSBwaHJhc2VzLnNsaWNlKDEpO1xuICAgICAgc2V0UGhyYXNlcyhuZXdQaHJhc2VzKTtcbiAgICB9XG4gIH07XG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT1cImNvbnRhaW5lclwiPlxuICAgICAgPGgxIG9uQ2xpY2s9e2hhbmRsZUNsaWNrfT57cGhyYXNlfTwvaDE+XG4gICAgICA8c3R5bGUganN4IGdsb2JhbD5cbiAgICAgICAge2BcbiAgICAgICAgICBAaW1wb3J0IHVybCgnaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3M/ZmFtaWx5PUZpcmErQ29kZSZkaXNwbGF5PXN3YXAnKTtcbiAgICAgICAgICBib2R5IHtcbiAgICAgICAgICAgIGJhY2tncm91bmQ6ICMwMDA7XG4gICAgICAgICAgfVxuXG4gICAgICAgICAgLmNvbnRhaW5lciB7XG4gICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgICAgaGVpZ2h0OiAxMDB2aDtcbiAgICAgICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAgICB9XG5cbiAgICAgICAgICBoMSB7XG4gICAgICAgICAgICBjb2xvcjogcmdiKDI1NSwgMjM1LCAyMzgpO1xuICAgICAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICAgICAgZm9udDogMzJweCAnZmlyYSBjb2RlJywgbWVubG8sIGhlbHZldGljYSwgYXJpYWwsIHNhbnMtc2VyaWY7XG4gICAgICAgICAgfVxuICAgICAgICBgfVxuICAgICAgPC9zdHlsZT5cbiAgICA8L2Rpdj5cbiAgKTtcbn07XG5cbmNvbnN0IGdldEluaXRpYWxQcm9wcyA9IGFzeW5jICgpID0+IHtcbiAgY29uc3QgcmFuZG9tV29yZHMgPSBhd2FpdCBnZXRSYW5kb21Xb3JkcygpO1xuICByZXR1cm4geyByYW5kb21Xb3JkcyB9O1xufTtcblJhbmRvbVRleHQuZ2V0SW5pdGlhbFByb3BzID0gZ2V0SW5pdGlhbFByb3BzO1xuXG5leHBvcnQgZGVmYXVsdCBSYW5kb21UZXh0O1xuIl19 */\n/*@ sourceURL=/Users/jasonoverby/p/random-text-site/pages/index.tsx */"));
+  }, "@import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap');body{background:#000;}.container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;height:100vh;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}h1{color:rgb(255,235,238);cursor:pointer;font:32px 'fira code',menlo,helvetica,arial,sans-serif;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9qYXNvbm92ZXJieS9wL3JhbmRvbS10ZXh0LXNpdGUvcGFnZXMvaW5kZXgudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXlEUyxBQUV3RixBQUUzRCxBQUlILEFBT1ksZ0JBVjNCLE9BV2lCLGVBQzRDLG9DQVI5QyxhQUNVLE1BUXpCLDZGQVBxQiw2RkFDckIiLCJmaWxlIjoiL1VzZXJzL2phc29ub3ZlcmJ5L3AvcmFuZG9tLXRleHQtc2l0ZS9wYWdlcy9pbmRleC50c3giLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyB1c2VTdGF0ZSB9IGZyb20gJ3JlYWN0JztcbmltcG9ydCBBd2Vzb21lRGVib3VuY2VQcm9taXNlIGZyb20gJ2F3ZXNvbWUtZGVib3VuY2UtcHJvbWlzZSc7XG5pbXBvcnQgZ2V0UmFuZG9tUGhyYXNlIGZyb20gJy4uL3JhbmRvbS10ZXh0L3NyYy9nZXQtcmFuZG9tLXRleHQnO1xuaW1wb3J0IHsgZ2V0UmFuZG9tV29yZHMsIGdldFJhbmRvbU51bWJlciB9IGZyb20gJy4uL3JhbmRvbS10ZXh0L3NyYy91dGlscyc7XG5pbXBvcnQgKiBhcyBzdHJpbmdzSnNvbiBmcm9tICcuLi9yYW5kb20tdGV4dC90ZXh0L3N0cmluZ3MuanNvbic7XG5cbmNvbnN0IE5VTUJFUl9PRl9QSFJBU0VTID0gMztcbmNvbnN0IFNUQVJURVJfUEhSQVNFID0gJ2dldCByYW5kb20gdGV4dCc7XG5jb25zdCBTVE9DS19QSFJBU0VTID0gc3RyaW5nc0pzb24ucGhyYXNlcztcblxuY29uc3QgZ2V0UmFuZG9tUGhyYXNlcyA9IGFzeW5jIChyYW5kb21Xb3Jkczogc3RyaW5nW10pID0+IHtcbiAgY29uc3QgcGhyYXNlcyA9IFtdO1xuICBmb3IgKGxldCBpID0gMDsgaSA8IE5VTUJFUl9PRl9QSFJBU0VTOyBpICs9IDEpIHtcbiAgICB0cnkge1xuICAgICAgY29uc3QgcGhyYXNlID0gYXdhaXQgZ2V0UmFuZG9tUGhyYXNlKHJhbmRvbVdvcmRzKTtcbiAgICAgIHBocmFzZXMucHVzaChwaHJhc2UpO1xuICAgIH0gY2F0Y2ggKGVycikge1xuICAgICAgY29uc29sZS5sb2coZXJyKTtcbiAgICB9XG4gIH1cbiAgcmV0dXJuIHBocmFzZXM7XG59O1xuY29uc3QgZ2V0UmFuZG9tUGhyYXNlc0RlYm91bmNlZCA9IEF3ZXNvbWVEZWJvdW5jZVByb21pc2UoZ2V0UmFuZG9tUGhyYXNlcywgNTAwKTtcbmNvbnN0IGdldFBocmFzZSA9IChwaHJhc2VzOiBzdHJpbmdbXSwgcGhyYXNlOiBzdHJpbmcpID0+IHtcbiAgY29uc3QgcmFuZG9tSW5kZXggPSBnZXRSYW5kb21OdW1iZXIoMCwgU1RPQ0tfUEhSQVNFUy5sZW5ndGggLSAxKTtcbiAgcmV0dXJuIFNUT0NLX1BIUkFTRVNbcmFuZG9tSW5kZXhdO1xufTtcblxuY29uc3QgUmFuZG9tVGV4dCA9ICh7IHJhbmRvbVdvcmRzIH06IHsgcmFuZG9tV29yZHM6IHN0cmluZ1tdIH0pID0+IHtcbiAgY29uc3QgW3BocmFzZXMsIHNldFBocmFzZXNdID0gdXNlU3RhdGUoW1NUQVJURVJfUEhSQVNFXSk7XG4gIGNvbnN0IFtwaHJhc2UsIHNldFBocmFzZV0gPSB1c2VTdGF0ZShTVEFSVEVSX1BIUkFTRSk7XG5cbiAgY29uc3QgaGFuZGxlQ2xpY2sgPSAoKSA9PiB7XG4gICAgY29uc29sZS5sb2coJ3BocmFzZXMnLCBwaHJhc2VzKTtcbiAgICBjb25zdCBuZXdQaHJhc2UgPSBnZXRQaHJhc2UocGhyYXNlcywgcGhyYXNlKTtcbiAgICBpZiAocGhyYXNlID09PSBwaHJhc2VzWzBdKSB7XG4gICAgICBjb25zdCBuZXdQaHJhc2VzID0gW25ld1BocmFzZSwgLi4ucGhyYXNlcy5zbGljZSgxKV07XG4gICAgICBzZXRQaHJhc2UobmV3UGhyYXNlKTtcbiAgICAgIHNldFBocmFzZXMobmV3UGhyYXNlcyk7XG4gICAgfSBlbHNlIHtcbiAgICAgIHNldFBocmFzZShwaHJhc2VzWzBdKTtcbiAgICB9XG4gICAgbGV0IG5ld1BocmFzZXMgPSAocGhyYXNlcyAmJiBwaHJhc2VzLnNsaWNlKDEpKSB8fCBbXTtcbiAgICBpZiAobmV3UGhyYXNlcy5sZW5ndGggPD0gMSkge1xuICAgICAgZ2V0UmFuZG9tUGhyYXNlc0RlYm91bmNlZChyYW5kb21Xb3JkcykudGhlbigocmFuZG9tUGhyYXNlcykgPT4ge1xuICAgICAgICBzZXRQaHJhc2VzKG5ld1BocmFzZXMuY29uY2F0KHJhbmRvbVBocmFzZXMpKTtcbiAgICAgIH0pO1xuICAgIH0gZWxzZSB7XG4gICAgICBuZXdQaHJhc2VzID0gcGhyYXNlcy5zbGljZSgxKTtcbiAgICAgIHNldFBocmFzZXMobmV3UGhyYXNlcyk7XG4gICAgfVxuICB9O1xuXG4gIHJldHVybiAoXG4gICAgPGRpdiBjbGFzc05hbWU9XCJjb250YWluZXJcIj5cbiAgICAgIDxoMSBvbkNsaWNrPXtoYW5kbGVDbGlja30+e3BocmFzZX08L2gxPlxuICAgICAgPHN0eWxlIGpzeCBnbG9iYWw+XG4gICAgICAgIHtgXG4gICAgICAgICAgQGltcG9ydCB1cmwoJ2h0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzP2ZhbWlseT1GaXJhK0NvZGUmZGlzcGxheT1zd2FwJyk7XG4gICAgICAgICAgYm9keSB7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kOiAjMDAwO1xuICAgICAgICAgIH1cblxuICAgICAgICAgIC5jb250YWluZXIge1xuICAgICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICAgIGhlaWdodDogMTAwdmg7XG4gICAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgICAgfVxuXG4gICAgICAgICAgaDEge1xuICAgICAgICAgICAgY29sb3I6IHJnYigyNTUsIDIzNSwgMjM4KTtcbiAgICAgICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgICAgIGZvbnQ6IDMycHggJ2ZpcmEgY29kZScsIG1lbmxvLCBoZWx2ZXRpY2EsIGFyaWFsLCBzYW5zLXNlcmlmO1xuICAgICAgICAgIH1cbiAgICAgICAgYH1cbiAgICAgIDwvc3R5bGU+XG4gICAgPC9kaXY+XG4gICk7XG59O1xuXG5jb25zdCBnZXRJbml0aWFsUHJvcHMgPSBhc3luYyAoKSA9PiB7XG4gIGNvbnN0IHJhbmRvbVdvcmRzID0gYXdhaXQgZ2V0UmFuZG9tV29yZHMoKTtcbiAgcmV0dXJuIHsgcmFuZG9tV29yZHMgfTtcbn07XG5SYW5kb21UZXh0LmdldEluaXRpYWxQcm9wcyA9IGdldEluaXRpYWxQcm9wcztcblxuZXhwb3J0IGRlZmF1bHQgUmFuZG9tVGV4dDtcbiJdfQ== */\n/*@ sourceURL=/Users/jasonoverby/p/random-text-site/pages/index.tsx */"));
 };
 
 var getInitialProps =
 /*#__PURE__*/
 function () {
-  var _ref3 = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  var _ref3 = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(
   /*#__PURE__*/
-  _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+  _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee2() {
     var randomWords;
-    return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+    return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return Object(_random_text_src_utils__WEBPACK_IMPORTED_MODULE_6__["getRandomWords"])();
+            return Object(_random_text_src_utils__WEBPACK_IMPORTED_MODULE_7__["getRandomWords"])();
 
           case 2:
             randomWords = _context2.sent;
@@ -4691,7 +4705,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// TODO: change to 500 when live
 var prepareWords = function prepareWords(words) {
   return Object(_utils__WEBPACK_IMPORTED_MODULE_4__["shuffleArr"])(Object(_utils__WEBPACK_IMPORTED_MODULE_4__["removeNonAlphaChars"])(Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_2__["default"])(words)));
 };
@@ -4811,36 +4824,35 @@ function () {
   var _ref = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
   /*#__PURE__*/
   _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(word) {
-    var pos, datamuseApiRes, datamuseApiJson, wordObj, tags;
+    var datamuseApiRes, datamuseApiJson, wordObj, tags;
     return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            pos = [];
-            _context.next = 3;
+            _context.next = 2;
             return isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2___default()("https://api.datamuse.com/words?sp=".concat(word, "&md=p&max=1"));
 
-          case 3:
+          case 2:
             datamuseApiRes = _context.sent;
-            _context.next = 6;
+            _context.next = 5;
             return datamuseApiRes.json();
 
-          case 6:
+          case 5:
             datamuseApiJson = _context.sent;
             wordObj = datamuseApiJson[0];
 
             if (!(wordObj && wordObj.tags)) {
-              _context.next = 11;
+              _context.next = 10;
               break;
             }
 
             tags = wordObj.tags;
             return _context.abrupt("return", tags);
 
-          case 11:
+          case 10:
             return _context.abrupt("return", ['prop']);
 
-          case 12:
+          case 11:
           case "end":
             return _context.stop();
         }
@@ -4874,7 +4886,6 @@ function () {
 
           case 5:
             datamuseApiJson = _context2.sent;
-            // console.log(datamuseApiJson);
             wordObj = datamuseApiJson[0];
 
             if (!(wordObj && wordObj.tags)) {
@@ -4928,10 +4939,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils */ "./random-text/src/utils.ts");
+/* harmony import */ var _text_strings_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../text/strings.json */ "./random-text/text/strings.json");
+var _text_strings_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../text/strings.json */ "./random-text/text/strings.json", 1);
 
 
 
-var specials = ['America', 'seventies', 'pattern', 'open', 'unknowable', 'ghosts', 'character', 'holographic', 'assemblage', 'surprised', 'unpredictable', 'beautiful', 'magic', 'accretion', 'cage', 'new', 'realities', 'reality', 'densely', 'phenomena', 'tattoo', 'chemical', 'Gloria', 'Crispin', 'tropical', 'electric', 'cowboy', 'snake', 'shark', 'tiger', 'discrete', 'fuzzy', 'eight'];
+
+var SPECIALS = _text_strings_json__WEBPACK_IMPORTED_MODULE_3__["specials"];
 
 var getSpecialsWord =
 /*#__PURE__*/
@@ -4944,8 +4958,8 @@ function () {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            index = Object(_utils__WEBPACK_IMPORTED_MODULE_2__["getRandomNumber"])(0, specials.length - 1);
-            return _context.abrupt("return", specials[index]);
+            index = Object(_utils__WEBPACK_IMPORTED_MODULE_2__["getRandomNumber"])(0, SPECIALS.length - 1);
+            return _context.abrupt("return", SPECIALS[index]);
 
           case 2:
           case "end":
@@ -5069,6 +5083,17 @@ function () {
 }();
 
 
+
+/***/ }),
+
+/***/ "./random-text/text/strings.json":
+/*!***************************************!*\
+  !*** ./random-text/text/strings.json ***!
+  \***************************************/
+/*! exports provided: phrases, specials, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"phrases\":[\"succeed unpredictable sentence\",\"dirty strong reality\",\"include tropical dollar\",\"discuss treated cowboy\",\"ask new fact\",\"receive actual telepathy\",\"become larger magic\",\"please typical shark\",\"eat dangerous assemblage\",\"live built character\",\"remain mad cage\",\"complete unknowable house\",\"recognize held seventies\",\"recognize additional eight\",\"remember dangerous ape\",\"provide unhappy ale\",\"discuss angry mouth\"],\"specials\":[\"America\",\"seventies\",\"pattern\",\"open\",\"unknowable\",\"ghosts\",\"character\",\"holographic\",\"assemblage\",\"surprised\",\"unpredictable\",\"beautiful\",\"magic\",\"accretion\",\"cage\",\"new\",\"realities\",\"reality\",\"densely\",\"phenomena\",\"tattoo\",\"chemical\",\"Gloria\",\"Crispin\",\"tropical\",\"electric\",\"cowboy\",\"snake\",\"shark\",\"tiger\",\"discrete\",\"fuzzy\",\"eight\"]}");
 
 /***/ }),
 
