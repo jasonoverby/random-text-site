@@ -1,44 +1,11 @@
 import { getRandomNumber } from './utils';
+import * as stringsJson from '../text/strings.json';
 
-const specials = [
-  'America',
-  'seventies',
-  'pattern',
-  'open',
-  'unknowable',
-  'ghosts',
-  'character',
-  'holographic',
-  'assemblage',
-  'surprised',
-  'unpredictable',
-  'beautiful',
-  'magic',
-  'accretion',
-  'cage',
-  'new',
-  'realities',
-  'reality',
-  'densely',
-  'phenomena',
-  'tattoo',
-  'chemical',
-  'Gloria',
-  'Crispin',
-  'tropical',
-  'electric',
-  'cowboy',
-  'snake',
-  'shark',
-  'tiger',
-  'discrete',
-  'fuzzy',
-  'eight',
-];
+const SPECIALS = stringsJson.specials;
 
 const getSpecialsWord = async () => {
-  const index = getRandomNumber(0, specials.length - 1);
-  return specials[index];
+  const index = getRandomNumber(0, SPECIALS.length - 1);
+  return SPECIALS[index];
 };
 
 export default getSpecialsWord;

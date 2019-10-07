@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import AwesomeDebouncePromise from 'awesome-debounce-promise';
 import getRandomPhrase from '../random-text/src/get-random-text';
-import { getRandomWords } from '../random-text/src/utils';
+import { getRandomWords, getRandomNumber } from '../random-text/src/utils';
+import * as stringsJson from '../random-text/text/strings.json';
 
 const NUMBER_OF_PHRASES = 3;
 const STARTER_PHRASE = 'get random text';
+const STOCK_PHRASES = stringsJson.phrases;
 
 const getRandomPhrases = async (randomWords: string[]) => {
   const phrases = [];
@@ -19,6 +21,10 @@ const getRandomPhrases = async (randomWords: string[]) => {
   return phrases;
 };
 const getRandomPhrasesDebounced = AwesomeDebouncePromise(getRandomPhrases, 500);
+const getStockPhrase = () => {
+  const randomIndex = getRandomNumber(0, STOCK_PHRASES.length - 1);
+  return STOCK_PHRASES[randomIndex];
+};
 
 const RandomText = ({ randomWords }: { randomWords: string[] }) => {
   const [phrases, setPhrases] = useState([STARTER_PHRASE]);
@@ -26,7 +32,14 @@ const RandomText = ({ randomWords }: { randomWords: string[] }) => {
 
   const handleClick = () => {
     console.log('phrases', phrases);
-    setPhrase(phrases[0]);
+    const stockPhrase = getStockPhrase();
+    if (phrase === phrases[0]) {
+      const newPhrases = [stockPhrase, ...phrases.slice(1)];
+      setPhrase(stockPhrase);
+      setPhrases(newPhrases);
+    } else {
+      setPhrase(phrases[0]);
+    }
     let newPhrases = (phrases && phrases.slice(1)) || [];
     if (newPhrases.length <= 1) {
       getRandomPhrasesDebounced(randomWords).then((randomPhrases) => {
