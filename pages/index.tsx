@@ -2,6 +2,7 @@ import { useState } from 'react';
 import AwesomeDebouncePromise from 'awesome-debounce-promise';
 import getRandomPhrase from '../random-text/src/get-random-text';
 import { getRandomWords, getRandomNumber } from '../random-text/src/utils';
+import { handleWordsFromUser } from '../random-text/src/specials';
 import * as stringsJson from '../random-text/text/strings.json';
 
 const NUMBER_OF_PHRASES = 3;
@@ -10,12 +11,14 @@ const STOCK_PHRASES = stringsJson.phrases;
 
 const getRandomPhrases = async (randomWords: string[]) => {
   const phrases = [];
-  for (let i = 0; i < NUMBER_OF_PHRASES; i += 1) {
-    try {
-      const phrase = await getRandomPhrase(randomWords);
-      phrases.push(phrase);
-    } catch (err) {
-      console.log(err);
+  if (randomWords.length > 0) {
+    for (let i = 0; i < NUMBER_OF_PHRASES; i += 1) {
+      try {
+        const phrase = await getRandomPhrase(randomWords);
+        phrases.push(phrase);
+      } catch (err) {
+        console.log(err);
+      }
     }
   }
   return phrases;
@@ -26,14 +29,26 @@ const getStockPhrase = () => {
   return STOCK_PHRASES[randomIndex];
 };
 
-const RandomText = ({ randomWords }: { randomWords: string[] }) => {
+let specialWordsFromUserHandled = false;
+
+const RandomText = ({
+  query,
+  randomWords,
+}: {
+  randomWords: string[];
+  query?: Record<string, string>;
+}) => {
   const [phrases, setPhrases] = useState([STARTER_PHRASE]);
   const [phrase, setPhrase] = useState(STARTER_PHRASE);
+  if (!specialWordsFromUserHandled) {
+    handleWordsFromUser(query);
+    specialWordsFromUserHandled = true;
+  }
 
   const handleClick = () => {
     console.log('phrases', phrases);
-    const stockPhrase = getStockPhrase();
     if (phrase === phrases[0]) {
+      const stockPhrase = getStockPhrase();
       const newPhrases = [stockPhrase, ...phrases.slice(1)];
       setPhrase(stockPhrase);
       setPhrases(newPhrases);
@@ -79,9 +94,13 @@ const RandomText = ({ randomWords }: { randomWords: string[] }) => {
   );
 };
 
-const getInitialProps = async () => {
+const getInitialProps = async ({
+  query,
+}: {
+  query?: Record<string, string>;
+}) => {
   const randomWords = await getRandomWords();
-  return { randomWords };
+  return { query, randomWords };
 };
 RandomText.getInitialProps = getInitialProps;
 
