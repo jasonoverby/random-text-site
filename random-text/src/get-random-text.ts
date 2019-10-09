@@ -3,22 +3,42 @@ import getWord from './get-word';
 import { getPOS } from './pos';
 import { isNotEmpty } from './utils';
 
-type MuseApiPartsOfSpeech = 'adj' | 'adv' | 'v' | 'n' | 'prop';
+type PosWithWordsPartsOfSpeech =
+  | 'adjectives'
+  | 'adverbs'
+  | 'verbs'
+  | 'nouns'
+  | 'rest';
 type Pos =
-  | MuseApiPartsOfSpeech
+  | PosWithWordsPartsOfSpeech
   | 'determiners'
   | 'conjunctions'
   | 'prepositions';
+type PosWithWords = Record<PosWithWordsPartsOfSpeech, string[]>;
 
 const DEFAULT_NUMBER_OF_LETTERS = 200;
 const WIGGLE_ROOM = 3;
 
-const getRandomPhrase = async (randomWords: string[]) => {
+const musePosToPartOfSpeech = {
+  adj: 'adjectives',
+  adv: 'adverbs',
+  n: 'nouns',
+  prop: 'rest',
+  v: 'verbs',
+};
+
+const getRandomPhrase = async (posWithWords: PosWithWords) => {
   const numberOfLetters = DEFAULT_NUMBER_OF_LETTERS;
-  const partsOfSpeech: Pos[] = ['v', 'adj', 'n'];
+  const partsOfSpeech: Pos[] = ['verbs', 'adjectives', 'nouns'];
 
   const specialsWord = getSpecialsWord();
-  let specialsWordPOS: string[] = await getPOS(specialsWord);
+  // TODO: add parts of speech for all specialsWords
+  // so this call does not have to happen
+  const specialsWordMusePos = await getPOS(specialsWord);
+  let specialsWordPos = specialsWordMusePos.map(
+    (musePartOfSpeech) => musePosToPartOfSpeech[musePartOfSpeech],
+  );
+
   let str = '';
 
   while (
@@ -28,13 +48,11 @@ const getRandomPhrase = async (randomWords: string[]) => {
     const pos = partsOfSpeech.shift();
     let word = '';
 
-    if (specialsWordPOS.includes(pos)) {
+    if (specialsWordPos.includes(pos)) {
       word = specialsWord;
-      specialsWordPOS = [];
+      specialsWordPos = [];
     } else {
-      word = await getWord(pos, randomWords);
-      const indexOfWord = randomWords.indexOf(word);
-      randomWords.splice(indexOfWord, 1);
+      word = await getWord(pos, posWithWords);
     }
 
     if (`${str} ${word}`.length < numberOfLetters) {

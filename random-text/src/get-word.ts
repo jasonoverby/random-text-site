@@ -1,25 +1,22 @@
-import { wordIsThisPOS, isMuseApiPartOfSpeech } from './pos';
-import {
-  getRandomNumber,
-  multilineStrToArrayOfWords,
-  removeNonAlphaChars,
-  shuffleArr,
-  getRandomWords,
-} from './utils';
+import { getRandomNumber, multilineStrToArrayOfWords } from './utils';
+import { isPosWithWordsPartOfSpeech } from './pos';
 
-type MuseApiPartsOfSpeech = 'adj' | 'adv' | 'v' | 'n' | 'prop';
+type PosWithWordsPartsOfSpeech =
+  | 'adjectives'
+  | 'adverbs'
+  | 'verbs'
+  | 'nouns'
+  | 'rest';
 type Pos =
-  | MuseApiPartsOfSpeech
+  | PosWithWordsPartsOfSpeech
   | 'determiners'
   | 'conjunctions'
   | 'prepositions';
+type PosWithWords = Record<PosWithWordsPartsOfSpeech, string[]>;
 type PartialRecord<K extends keyof any, T> = {
   [P in K]?: T;
 };
 type Words = PartialRecord<Pos, string[]>;
-
-const prepareWords = (words: string[]) =>
-  shuffleArr(removeNonAlphaChars([...words]));
 
 const getWords = (): Words => ({
   conjunctions: 'and but for or so yet nor'.split(' '),
@@ -39,21 +36,11 @@ const getRandomWordFromWords = (pos: Pos) => {
   return '';
 };
 
-const getWord = async (pos: Pos, randomWords: string[]) => {
-  const preparedWords = prepareWords(randomWords);
-
-  if (isMuseApiPartOfSpeech(pos)) {
-    for (let i = 0; i < preparedWords.length; i += 1) {
-      const word = preparedWords[i];
-      const isThisPOS = await wordIsThisPOS(word, pos);
-      if (isThisPOS) return word;
-    }
-  }
-
-  getRandomWords().then((moreWords: string[]) => {
-    randomWords = randomWords.concat(moreWords);
-  });
-  return getRandomWordFromWords(pos);
+const getWord = async (pos: Pos, posWithWords: PosWithWords) => {
+  if (!isPosWithWordsPartOfSpeech(pos)) return getRandomWordFromWords(pos);
+  const wordsThatMatchPos = posWithWords[pos];
+  const randomIndex = getRandomNumber(0, wordsThatMatchPos.length - 1);
+  return wordsThatMatchPos[randomIndex];
 };
 
 export default getWord;
