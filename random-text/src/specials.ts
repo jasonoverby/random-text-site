@@ -1,21 +1,39 @@
 import { getRandomNumber } from './utils';
-import * as stringsJson from '../text/strings.json';
+import posWithSpecials from '../text/pos-with-specials.json';
+import { getPOS } from './pos';
 
-const SPECIALS = stringsJson.specials;
+const musePosToPartOfSpeech: Record<string, PosWithWordsPartsOfSpeech> = {
+  adj: 'adjectives',
+  adv: 'adverbs',
+  n: 'nouns',
+  prop: 'rest',
+  v: 'verbs',
+};
 
 const handleWordsFromUser = (query?: Record<string, string>) => {
   const specialsStr = query && (query.word || query.words);
   const specialsWords = specialsStr && specialsStr.split(',');
   if (specialsWords) {
-    specialsWords.forEach((word: string) => {
-      SPECIALS.push(word);
-    });
+    Promise.all(
+      specialsWords.map((specialsWord: string) =>
+        getPOS(specialsWord).then((specialsWordMusePos) => {
+          const specialsWordPos = musePosToPartOfSpeech[specialsWordMusePos];
+          posWithSpecials[specialsWordPos].push(specialsWord);
+        }),
+      ),
+    );
   }
 };
 
-const getSpecialsWord = (): string => {
-  const index = getRandomNumber(0, SPECIALS.length - 1);
-  return SPECIALS[index];
+const getSpecialsWord = (partsOfSpeech: PosWithWordsPartsOfSpeech[]) => {
+  const randomPosIndex = getRandomNumber(0, partsOfSpeech.length - 1);
+  const specialsWordPos = partsOfSpeech[randomPosIndex];
+  const specials = posWithSpecials[specialsWordPos];
+  const randomSpecialsIndex = getRandomNumber(0, specials.length - 1);
+  return {
+    specialsWord: specials[randomSpecialsIndex],
+    specialsWordPos,
+  };
 };
 
 export { getSpecialsWord, handleWordsFromUser };

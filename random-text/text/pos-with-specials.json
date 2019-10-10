@@ -13,11 +13,14 @@
     "chemical",
     "eight",
     "electric",
+    "ghost",
+    "Gloria",
     "magic",
     "moon",
     "night",
     "open",
     "pattern",
+    "phenomenon",
     "shark",
     "seventies",
     "reality",
@@ -57,9 +60,6 @@
     "new"
   ],
   "rest": [
-    "ghosts",
-    "Gloria",
-    "phenomena",
-    "realities"
+    "xxx"
   ]
 }

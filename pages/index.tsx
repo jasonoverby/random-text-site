@@ -34,6 +34,7 @@ const RandomText = ({ query }: { query?: Record<string, string> }) => {
   const [phrases, setPhrases] = useState([STARTER_PHRASE]);
   const [phrase, setPhrase] = useState(STARTER_PHRASE);
   if (!specialWordsFromUserHandled) {
+    /** fire and forget */
     handleWordsFromUser(query);
     specialWordsFromUserHandled = true;
   }
