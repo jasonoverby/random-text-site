@@ -10,7 +10,7 @@ const musePosToPartOfSpeech: Record<string, PosWithWordsPartsOfSpeech> = {
   v: 'verbs',
 };
 
-const handleWordsFromUser = (query?: Record<string, string>) => {
+const handleWordsFromUser = async (query?: Record<string, string>) => {
   const specialsStr = query && (query.word || query.words);
   const specialsWords = specialsStr && specialsStr.split(',');
   if (specialsWords) {

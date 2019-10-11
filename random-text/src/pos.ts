@@ -1,18 +1,18 @@
 import fetch from 'isomorphic-unfetch';
 
-const getPOS = async (word: string): Promise<MuseApiPartsOfSpeech> => {
-  const datamuseApiRes: any = await fetch(
-    `https://api.datamuse.com/words?sp=${word}&md=p&max=1`,
-  );
-  const datamuseApiJson = await datamuseApiRes.json();
-  const wordObj: any = datamuseApiJson[0];
-  if (wordObj && wordObj.tags) {
-    const { tags } = wordObj;
-    return tags[0];
-  }
+const getPOS = async (word: string): Promise<MuseApiPartsOfSpeech> =>
+  fetch(`https://api.datamuse.com/words?sp=${word}&md=p&max=1`)
+    .then((datamuseApiRes) => datamuseApiRes.json())
+    .then((datamuseApiJson) => {
+      const wordObj: any = datamuseApiJson[0];
+      if (wordObj && wordObj.tags) {
+        const { tags } = wordObj;
+        return tags[0];
+      }
 
-  return 'prop';
-};
+      /** default return value if word or pos are not found */
+      return 'prop';
+    });
 
 const isPosWithWordsPartOfSpeech = (
   str: string,
