@@ -1,46 +1,37 @@
 import { useState } from 'react';
-import AwesomeDebouncePromise from 'awesome-debounce-promise';
 import getRandomPhrase from '../random-text/src/get-random-text';
-import { getRandomWords, getRandomNumber } from '../random-text/src/utils';
+import { getRandomNumber } from '../random-text/src/utils';
 import { handleWordsFromUser } from '../random-text/src/specials';
-import * as stringsJson from '../random-text/text/strings.json';
+import stockPhrases from '../random-text/text/stock-phrases.json';
+import posWithWords from '../random-text/text/pos-with-words.json';
 
 const NUMBER_OF_PHRASES = 3;
 const STARTER_PHRASE = 'get random text';
-const STOCK_PHRASES = stringsJson.phrases;
 
-const getRandomPhrases = async (randomWords: string[]) => {
+const getRandomPhrases = () => {
   const phrases = [];
-  if (randomWords.length > 0) {
-    for (let i = 0; i < NUMBER_OF_PHRASES; i += 1) {
-      try {
-        const phrase = await getRandomPhrase(randomWords);
-        phrases.push(phrase);
-      } catch (err) {
-        console.log(err);
-      }
+  for (let i = 0; i < NUMBER_OF_PHRASES; i += 1) {
+    try {
+      const phrase = getRandomPhrase(posWithWords);
+      phrases.push(phrase);
+    } catch (err) {
+      console.log(err);
     }
   }
   return phrases;
 };
-const getRandomPhrasesDebounced = AwesomeDebouncePromise(getRandomPhrases, 500);
 const getStockPhrase = () => {
-  const randomIndex = getRandomNumber(0, STOCK_PHRASES.length - 1);
-  return STOCK_PHRASES[randomIndex];
+  const randomIndex = getRandomNumber(0, stockPhrases.length - 1);
+  return stockPhrases[randomIndex];
 };
 
 let specialWordsFromUserHandled = false;
 
-const RandomText = ({
-  query,
-  randomWords,
-}: {
-  randomWords: string[];
-  query?: Record<string, string>;
-}) => {
+const RandomText = ({ query }: { query?: Record<string, string> }) => {
   const [phrases, setPhrases] = useState([STARTER_PHRASE]);
   const [phrase, setPhrase] = useState(STARTER_PHRASE);
   if (!specialWordsFromUserHandled) {
+    /** fire and forget */
     handleWordsFromUser(query);
     specialWordsFromUserHandled = true;
   }
@@ -57,9 +48,8 @@ const RandomText = ({
     }
     let newPhrases = (phrases && phrases.slice(1)) || [];
     if (newPhrases.length <= 1) {
-      getRandomPhrasesDebounced(randomWords).then((randomPhrases) => {
-        setPhrases(newPhrases.concat(randomPhrases));
-      });
+      const randomPhrases = getRandomPhrases();
+      setPhrases(newPhrases.concat(randomPhrases));
     } else {
       newPhrases = phrases.slice(1);
       setPhrases(newPhrases);
@@ -94,13 +84,8 @@ const RandomText = ({
   );
 };
 
-const getInitialProps = async ({
-  query,
-}: {
-  query?: Record<string, string>;
-}) => {
-  const randomWords = await getRandomWords();
-  return { query, randomWords };
+const getInitialProps = ({ query }: { query?: Record<string, string> }) => {
+  return { query };
 };
 RandomText.getInitialProps = getInitialProps;
 
