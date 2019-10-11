@@ -1,12 +1,12 @@
 import { getSpecialsWord } from './specials';
 import getWord from './get-word';
-import { getPOS, isPosWithWordsPartOfSpeech } from './pos';
+import { isPosWithWordsPartOfSpeech } from './pos';
 import { isNotEmpty } from './utils';
 
 const DEFAULT_NUMBER_OF_LETTERS = 200;
 const WIGGLE_ROOM = 3;
 
-const getRandomPhrase = async (posWithWords: PosWithWords) => {
+const getRandomPhrase = (posWithWords: PosWithWords) => {
   const numberOfLetters = DEFAULT_NUMBER_OF_LETTERS;
   const partsOfSpeech: Pos[] = ['verbs', 'adjectives', 'nouns'];
 
