@@ -2,12 +2,11 @@ import { useState } from 'react';
 import getRandomPhrase from '../random-text/src/get-random-text';
 import { getRandomNumber } from '../random-text/src/utils';
 import { handleWordsFromUser } from '../random-text/src/specials';
-import strings from '../random-text/text/strings.json';
+import stockPhrases from '../random-text/text/stock-phrases.json';
 import posWithWords from '../random-text/text/pos-with-words.json';
 
 const NUMBER_OF_PHRASES = 3;
 const STARTER_PHRASE = 'get random text';
-const STOCK_PHRASES = strings.phrases;
 
 const getRandomPhrases = () => {
   const phrases = [];
@@ -22,8 +21,8 @@ const getRandomPhrases = () => {
   return phrases;
 };
 const getStockPhrase = () => {
-  const randomIndex = getRandomNumber(0, STOCK_PHRASES.length - 1);
-  return STOCK_PHRASES[randomIndex];
+  const randomIndex = getRandomNumber(0, stockPhrases.length - 1);
+  return stockPhrases[randomIndex];
 };
 
 let specialWordsFromUserHandled = false;
